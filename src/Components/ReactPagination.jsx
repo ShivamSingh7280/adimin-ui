@@ -40,7 +40,12 @@ const ReactPagination = (props) => {
 				</PaginationItem>
 			))}
 
-			<PaginationItem>
+			<PaginationItem
+				className={
+					currentPageNum === Math.ceil(totalData / showPerPage)
+						? "disabled"
+						: ""
+				}>
 				<PaginationLink href="#" next onClick={() => _goToNextPage()} />
 			</PaginationItem>
 		</Pagination>

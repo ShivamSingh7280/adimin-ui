@@ -43,6 +43,7 @@ const AdminsPage = () => {
 		} else {
 			setDisplayData(adminsList);
 		}
+		setPaginate({ start: 1, end: 10 });
 	};
 
 	const _handleChange = (searchString) => {
@@ -96,12 +97,7 @@ const AdminsPage = () => {
 
 	const _extractedList = () => {
 		const list = [...displayData];
-		let result = [];
-		if (list.length < paginate.end) {
-			result = list.slice(0);
-		} else {
-			result = list.slice(paginate.start - 1, paginate.end);
-		}
+		const result = list.slice(paginate.start - 1, paginate.end);
 		return result;
 	};
 
