@@ -107,7 +107,7 @@ const AdminsPage = () => {
 		const tempAdminsList = displayData.map((user, index) =>
 			name === "allSelect" &&
 			index >= paginate.start - 1 &&
-			index <= paginate.end
+			index < paginate.end
 				? { ...user, isChecked: checked }
 				: user.id === id
 				? { ...user, isChecked: checked }
